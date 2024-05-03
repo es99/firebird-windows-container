@@ -1,0 +1,27 @@
+services:
+  acessots:
+    image: "esouza99/firebird-windows:1.0"
+    volumes:
+      - acessots:C:\AcessoTS
+    networks:
+      - acessots-net
+    restart: always
+  pjpctb:
+    image: "esouza99/firebird-windows:1.0"
+    volumes:
+      - pjpctb:C:\PJPCTB
+    networks:
+      - pjpctb-net
+    restart: always
+
+
+volumes:
+  pjpctb:
+  acessots:
+networks:
+  acessots-net:
+    name: acessots
+    external: true
+  pjpctb-net:
+    name: pjpctb
+    external: true
